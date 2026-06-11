@@ -1,6 +1,9 @@
 # 🤖 Sistem RAG Lokal Sederhana
 
-Proyek ini adalah implementasi *Retrieval-Augmented Generation* (RAG) secara lokal menggunakan Python. Aplikasi ini memungkinkan pengguna untuk bertanya kepada AI (LLM) mengenai isi dari sebuah dokumen teks spesifik. Aplikasi sepenuhnya berjalan secara *offline* di komputer lokal sehingga menjamin privasi data.
+**Deskripsi Proyek:**
+Proyek ini merupakan tugas praktek mata kuliah **Advanced NLP (Pertemuan 12)** di **Pascasarjana Universitas Pamulang (UNPAM)**.
+
+Aplikasi ini adalah implementasi *Retrieval-Augmented Generation* (RAG) secara lokal menggunakan Python. Aplikasi ini memungkinkan pengguna untuk bertanya kepada AI (LLM) mengenai isi dari sebuah dokumen teks spesifik. Aplikasi sepenuhnya berjalan secara *offline* di komputer lokal sehingga menjamin privasi data.
 
 ## 🛠️ Teknologi yang Digunakan
 *   **[Ollama](https://ollama.com/):** Untuk menjalankan model AI secara lokal.
