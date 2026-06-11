@@ -5,10 +5,11 @@ from langchain_community.vectorstores import FAISS
 from langchain_ollama import OllamaEmbeddings, OllamaLLM
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
+import time
 import warnings
 warnings.filterwarnings("ignore")
 
-# Gunakan cache agar database & model tidak di-reload setiap kali user mengetik/menekan tombol
+# Gunakan cache agar database & model tidak di-reload setiap kali user mengetik
 @st.cache_resource
 def inisialisasi_rag():
     # 1. Memuat dokumen
@@ -67,11 +68,22 @@ try:
     # Jika user menekan Enter atau mengisi teks
     if pertanyaan:
         with st.spinner("AI sedang berpikir mencari jawaban di dokumen..."):
+            # PERBAIKAN: Catat waktu mulai
+            waktu_mulai = time.time()
+            
+            # Jalankan RAG Pipeline
             hasil = qa_chain.invoke(pertanyaan)
+            
+            # PERBAIKAN: Catat waktu selesai dan hitung selisihnya
+            waktu_selesai = time.time()
+            durasi = waktu_selesai - waktu_mulai
             
             # Menampilkan hasil jawaban
             st.markdown("### 📝 Jawaban AI:")
             st.success(hasil['result'])
+            
+            # MENAMPILKAN METRIK EVALUASI: Waktu respons di UI web
+            st.info(f"⏱️ **Waktu Respons (Latency):** {durasi:.2f} detik")
 
 except Exception as e:
     st.error(f"Terjadi kesalahan: {e}")
