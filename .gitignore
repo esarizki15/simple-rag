@@ -1,0 +1,30 @@
+# Lingkungan Virtual Python
+rag_env/
+venv/
+env/
+
+# File Cache dan Bytecode Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# File Sistem Operasi (Mac/Windows)
+.DS_Store
+Thumbs.db
+
+# Konfigurasi IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# File Database / Model Lokal (Jika nantinya menyimpan file FAISS/Vector)
+*.faiss
+*.pkl
+
+# Variabel Lingkungan
+.env
+
+# Cache Streamlit
+.streamlit/
